@@ -1,0 +1,68 @@
+name: "SBI Issue（Sprint Backlog Item）"
+description: "実作業タスク（1〜2日粒度が理想）"
+title: "[SBI] "
+labels: ["type:sbi", "status:todo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **目的：実作業タスクの管理**
+        - 作業はすべてSBIで行う
+        - 1〜2日で完了できる粒度が理想
+        - PR紐付けは必須ではない
+
+  - type: input
+    id: pj_label
+    attributes:
+      label: "🏷 pjラベル（必須）"
+      description: "例：pj:doc-platform（入力値をもとに自動でラベルが付与されます）"
+      placeholder: "pj:xxx"
+    validations:
+      required: true
+
+  - type: input
+    id: parent_pbi
+    attributes:
+      label: "🔗 親PBI Issue（必須）"
+      description: "本文にも `Part of #456` を入れて親子が分かる状態にしてね"
+      placeholder: "#456"
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "🛠 作業内容（動詞ベース）"
+      placeholder: |
+        - 
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: "✅ 完了条件"
+      placeholder: |
+        - 
+    validations:
+      required: true
+
+  - type: dropdown
+    id: size
+    attributes:
+      label: "⏱ サイズ感（目安）"
+      options:
+        - "0.5日"
+        - "1日"
+        - "2日"
+        - "2日超（分割検討）"
+    validations:
+      required: false
+
+  - type: input
+    id: related_pr
+    attributes:
+      label: "🔗 関連PR / リンク（任意）"
+      placeholder: "#789 / https://..."
+    validations:
+      required: false

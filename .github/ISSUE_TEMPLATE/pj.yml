@@ -1,0 +1,69 @@
+name: "PJ Issue（Project）"
+description: "プロジェクト全体の管理・可視化（作業は行わない）"
+title: "[PJ] "
+labels: ["type:pj"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **目的：プロジェクト全体の管理・可視化**
+        - PJは「作業」はしない（作業はSBIで管理）
+        - 進捗・状態の見える化が主役
+
+  - type: input
+    id: pj_label
+    attributes:
+      label: "🏷 pjラベル（必須）"
+      description: "例：pj:doc-platform（入力値をもとに自動でラベルが付与されます）"
+      placeholder: "pj:xxx"
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: "🎯 ゴール（このPJで達成したいこと）"
+      description: "プロジェクトの最終到達点を明確に"
+      placeholder: "例：ドキュメント管理基盤を整備し、ドキュメントが迷子にならない状態にする"
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: "🧭 スコープ（やること / やらないこと）"
+      placeholder: |
+        やること：
+        - 
+        やらないこと：
+        - 
+    validations:
+      required: true
+
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: "✅ 成果物（アウトプット）"
+      placeholder: |
+        - 
+    validations:
+      required: true
+
+  - type: textarea
+    id: related
+    attributes:
+      label: "🔗 関連リンク（任意）"
+      placeholder: |
+        - 
+    validations:
+      required: false
+
+  - type: textarea
+    id: children
+    attributes:
+      label: "🧩 配下PBI（作成後にリンク）"
+      description: "PBIを作ったらここに列挙（例：- #123）"
+      placeholder: |
+        - #???
+    validations:
+      required: false

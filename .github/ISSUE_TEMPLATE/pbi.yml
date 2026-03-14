@@ -1,0 +1,65 @@
+name: "PBI Issue（Product Backlog Item）"
+description: "価値単位の管理（成果物ベース／複数SBIを内包）"
+title: "[PBI] "
+labels: ["type:pbi", "status:todo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **目的：価値単位の管理**
+        - PBIは成果物ベースで定義
+        - 配下SBIがすべて完了したらClose
+
+  - type: input
+    id: pj_label
+    attributes:
+      label: "🏷 pjラベル（必須）"
+      description: "例：pj:doc-platform（入力値をもとに自動でラベルが付与されます）"
+      placeholder: "pj:xxx"
+    validations:
+      required: true
+
+  - type: input
+    id: parent_pj
+    attributes:
+      label: "🔗 親PJ Issue（必須）"
+      description: "本文にも `Part of #123` を入れて親子が分かる状態にしてね"
+      placeholder: "#123"
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: "🎯 目的（このPBIで生まれる価値）"
+      placeholder: "例：README構成を整理して、初見でも必要情報に到達できるようにする"
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: "✅ 完了条件（Doneの定義）"
+      placeholder: |
+        - 
+    validations:
+      required: true
+
+  - type: textarea
+    id: child_sbis
+    attributes:
+      label: "🔧 配下SBI（作成後にリンク）"
+      description: "SBIを作ったらここに列挙（例：- #456）"
+      placeholder: |
+        - #???
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "📌 補足（任意）"
+      placeholder: |
+        - 
+    validations:
+      required: false
