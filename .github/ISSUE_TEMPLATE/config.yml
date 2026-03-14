@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Issue運用ルール（PJ / PBI / SBI）"
+    url: "https://github.com/hituzi-dev/hituzi-docs/blob/main/%E9%81%8B%E7%94%A8%E3%83%AB%E3%83%BC%E3%83%AB/issue%E7%AE%A1%E7%90%86.md"
+    about: "起票前に必読（親子リンク・ラベル・Closeルール）"
